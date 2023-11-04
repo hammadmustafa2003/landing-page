@@ -10,6 +10,7 @@ import Check from './check.png';
 import positionImg from './position.png';
 import amplifyImg from './amplify.png';
 import monetizeImg from './monetize.png';
+import pencil from './pencil.png';
 
 function App() {
 	const doings = [
@@ -79,17 +80,15 @@ function App() {
 
 						<motion.button className="text-xl text-white bg-blue-500 p-3 rounded-lg w-fit self-center hover:bg-blue-600 duration-300"
 							whileHover={{ scale: 1.1 }}
-							onHoverStart={e => { }}
-							onHoverEnd={e => { }}
 						>
-							Schedule Chat
+							<a href='https://calendly.com/joshcons/30min'>Schedule Chat</a>
 						</motion.button>
 					</motion.div>
 				</section>
 
 				<Billboard />
 
-				<section id='process' className="flex flex-col my-5 md:mt-[50vh] mb-24 h-fit md:h-fit content-center items-center justify-center p-20 bg-sky-800">
+				<section id='process' className="flex flex-col md:mt-[50vh] mb-24 mt-60 h-fit md:h-fit content-center items-center justify-center p-20 bg-sky-800">
 
 					<motion.div
 						initial={{ opacity: -1, translateY: -100 }}
@@ -180,6 +179,31 @@ function App() {
 					</h1>
 					<Testimonials />
 
+				</section>
+
+				<section id="muse_banner" className="flex flex-col mx-10 my-2 md:pt-0 pb-24 md:h-fit content-center items-center justify-center z-0">
+					<motion.div
+						className="flex flex-col gap-y-5 md:w-fit self-center content-center items-center justify-center relative"
+						initial={{ opacity: 0, translateY: -100 }}
+						whileInView={{ opacity: 1, translateY: 0 }}
+					>
+						<h1 className="md:text-5xl text-3xl text-blue-700 my-10 z-10">
+							Try our Muse tool
+						</h1>
+						<motion.button className="text-xl text-white bg-blue-500 p-3 rounded-lg w-fit self-center hover:bg-blue-600 duration-300 z-10"
+							whileHover={{ scale: 1.1 }}
+						>
+							<a href='https://linkedin-post-generator-eight.vercel.app/' target="_blank">Muse</a>
+						</motion.button>
+
+						<motion.button className="text-xl text-white bg-blue-500 p-3 rounded-lg w-fit self-center hover:bg-blue-600 duration-300 z-10"
+							whileHover={{ scale: 1.1 }}
+						>
+							<a href='https://calendly.com/joshcons/30min' target="_blank">Schedule Chat</a>
+						</motion.button>
+
+						<img src={pencil} alt="muse pencil" className='absolute -bottom-20 md:-right-20 -right-10 z-0'/>
+					</motion.div>
 				</section>
 			</AnimatePresence>
 		</div>

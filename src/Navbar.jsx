@@ -1,5 +1,6 @@
 import './App.css';
 import logo from './logo.png';
+import museBg from './muse_bg.png';
 import { useState } from 'react';
 
 
@@ -64,9 +65,13 @@ const Navbar = () => {
 			<nav className="hidden md:flex items-center gap-x-4 flex-row">
 				<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("home")}>HOME</div>
 				<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("process")} >PROCESS</div>
-				<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("what-we-do")} >WHAT WE DO?</div>
+				{/* <div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("what-we-do")} >WHAT WE DO?</div> */}
 				<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("services")} >SERVICES</div>
 				<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("testimonial")} >TESTIMONIALS</div>
+				<a href='https://linkedin-post-generator-eight.vercel.app/' className='relative p-5'>
+					MUSE
+					<img src={museBg} alt="muse" className="absolute bottom-0 -right-2" />
+				</a>
 			</nav>
 
 
@@ -80,14 +85,18 @@ const Navbar = () => {
 					</button>
 					<div onClick={() => scrollToElementMobile('home')}>HOME</div>
 					<div onClick={() => scrollToElementMobile('process')} >PROCESS</div>
-					<div onClick={() => scrollToElementMobile('what-we-do')} >WHAT WE DO?</div>
+					{/* <div onClick={() => scrollToElementMobile('what-we-do')} >WHAT WE DO?</div> */}
 					<div onClick={() => scrollToElementMobile('services')} >SERVICES</div>
 					<div onClick={() => scrollToElementMobile('testimonial')} >TESTIMONIAL</div>
+					<a href='https://linkedin-post-generator-eight.vercel.app/' className='relative p-5'>
+						MUSE
+						<img src={museBg} alt="muse" className="absolute bottom-0 -right-2" />
+					</a>
 				</nav>
 			)}
 
 			<button className=" bg-blue-500 text-white hover:bg-blue-600 duration-300 ease-in-out rounded-xl md:p-3 my-4 md:text-sm text-xs p-2">
-				Schedule Chat
+				<a href='https://calendly.com/joshcons/30min'>Schedule Chat</a>
 			</button>
 
 			<button className="md:hidden" onClick={toggleMenu}>
