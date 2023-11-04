@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+html{
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  font-family: 'Young Serif', serif;
+  /* overflow-x: hidden; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.fade-in-right{
+  z-index: 50;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  animation: fadeInRight 0.3s ease-in-out;
+}
+
+.fade-in-left{
+  z-index: 50;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  animation: fadeInLeft 0.3s ease-in-out;
+}
+
+.fade-out{
+  animation: fadeOut 0.3s ease-out;
+}
+
+.mobile-menu {
+  animation: fadeInRightMenu 0.3s ease-in;
+}
+
+.mobile-menu.exit {
+  animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeInRightMenu {
+  0% {
+    translate: 50%;
+    opacity: 0;
+  }
+
+  100% {
+    translate: 0;
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes fadeInRight {
+  0% {
+    scale:0.5;
+    translate: 50%;
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+    scale:1;
+    translate: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    scale:0.5;
+    translate: -50%;
+    opacity: 0;
+  }
+
+  100% {
+    scale:1;
+    translate: 0;
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeOut {
+  0% {
+    translate: 0;
+    opacity: 1;
+  }
+
+  100% {
+    translate: 50%;
+    opacity: 0;
   }
 }

@@ -1,11 +1,11 @@
-// import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Typist from 'react-typist-component';
-import { motion, AnimatePresence} from "framer-motion"
+import { motion, AnimatePresence, backIn } from "framer-motion"
 import Navbar from './Navbar';
 import Testimonials from "./Testimonials";
-import Billboard from './Billboard';
 
 import './App.css';
+import Hollywood from './Hollywood.png';
 import Check from './check.png';
 import positionImg from './position.png';
 import amplifyImg from './amplify.png';
@@ -47,6 +47,42 @@ function App() {
 		},
 	  ];
 
+	const [scrollPosition, setScrollPosition] = useState(0);
+	const imageRef = useRef(null);
+
+	useEffect(() => {
+		setInterval(() => {
+			const position = window.scrollY;
+			setScrollPosition(position);
+		}, 100);
+
+		// window.addEventListener("scroll", handleScroll);
+
+		const maxScaleFactor = 1.25;
+		const minOpacity = 0;
+		const maxOpacity = 0.5;
+
+		const scaleFactor = 0.9 + (scrollPosition / window.innerHeight) * 0.2;
+		let opacity;
+
+		if (scaleFactor > maxScaleFactor) {
+			opacity = Math.max(maxOpacity - ((scaleFactor - maxScaleFactor) / 0.2) * 1.5, minOpacity);
+		} else {
+			opacity = 1;
+		}
+
+		const translateY = -30 + ((scrollPosition / 20) + (Math.log10(scrollPosition) * 10)); // Adjust this value for the desired translation effect
+
+		imageRef.current.style.opacity = `${opacity}`;
+		imageRef.current.style.transition = "all 0.3s ease-in-out";
+		// imageRef.current.style.transform = `scale(${Math.min(scaleFactor, maxScaleFactor)}))`;
+
+		imageRef.current.style.transform = `scale(${Math.min(scaleFactor, maxScaleFactor)}) translateY(${translateY}px)`;
+
+		// return () => {
+		// 	window.removeEventListener("scroll", handleScroll);
+		// };
+	}, [scrollPosition]);
 
 	return (
 		<div className="App overflow-clip">
@@ -87,15 +123,17 @@ function App() {
 					</motion.div>
 				</section>
 
-				<Billboard />
+				<div ref={imageRef} className="image-container">
+					<img src={Hollywood} alt="billboard" className='w-screen z-0 sticky' />
+				</div>
 
-				<section id='process' className="flex flex-col my-5 md:mt-[50vh] mb-24 h-fit md:h-fit content-center items-center justify-center p-20 bg-sky-800">
+				<section id='process' className="flex flex-col my-5 md:mt-48 mb-24 h-fit md:h-fit content-center items-center justify-center p-20 bg-sky-800">
 
 					<motion.div
 						initial={{ opacity: -1, translateY: -100 }}
 						whileInView={{ opacity: 1, translateY: 0 }}
 						transition={{ delay: 0.3, duration: 0.3, ease: "backOut" }}
-						className=" mt-20"
+						className=" mt-42"
 					>
 						<p className="text-lg md:text-2xl text-white">
 							You are here because you're a funder or executive and you're interested in
