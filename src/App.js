@@ -126,7 +126,7 @@ function App() {
 
 				</section>
 
-				<section className="flex flex-col px-10 my-5 md:my-32 md:h-fit items-center">
+				<section id="what-we-do" className="flex flex-col px-10 my-5 md:my-32 md:h-fit items-center">
 					<h1 className="md:text-5xl text-3xl text-blue-700 my-10">
 						WHAT WE DO?
 					</h1>
@@ -143,11 +143,11 @@ function App() {
 								<img
 									src={doing.image}
 									alt="position"
-									className={`md:w-1/2 w-5/12 md:opacity-0 group-hover:opacity-100 delay-200 duration-500 transition-all ${index % 2 === 0 ? 'fade-in-right' : 'fade-in-left'
+									className={`md:w-1/2 sm:w-7/12 w-5/6 md:opacity-0 group-hover:opacity-100 delay-200 duration-500 transition-all ${index % 2 === 0 ? 'fade-in-right' : 'fade-in-left'
 										}`}
 								/>
 							</div>
-							<div className="flex flex-col shadow-inner p-5 gap-y-3 rounded-lg md:w-2/5 m-3">
+							<div className="flex flex-col shadow-xl border-stone-200 border-[1px] p-5 gap-y-3 rounded-lg md:w-2/5 m-3">
 								<h1 className="bg-blue-500 rounded-full md:text-5xl text-3xl w-fit h-fit px-6 py-3 shadow-lg text-white">{index + 1}</h1>
 								<h2 className="md:text-3xl text-xl">{doing.name}</h2>
 								<p className="md:text-xl text-md">{doing.description}</p>
@@ -156,25 +156,19 @@ function App() {
 					))}
 				</section>
 
-				<section
+				<section id="services"
 					className="flex flex-col px-10 my-5 md:my-32 md:h-fit items-center bg-sky-800"
 				>
 					<h1 className="md:text-6xl text-4xl text-white my-10">
 						Services
 					</h1>
 
-					<div className="flex md:flex-row flex-col p-10 m-10 ">
+					<div className="flex md:flex-row flex-col p-10 m-10 flex-wrap justify-center">
 						{services.map((service, index) => (
-							<motion.div
-								key={index}
-								initial={{ opacity: 0, translateY: -100 }}
-								whileInView={{ opacity: 1, translateY: 0 }}
-								transition={{ duration: 0.5, ease: "backOut" }}
-								className="flex-col p-10 m-10 bg-white rounded-xl md:w-1/5 shadow-lg md:hover:scale-110 duration-150 ease-in"
-							>
+							<div className="flex-col p-10 m-10 bg-white rounded-xl md:w-[325px] shadow-lg shadow-slate-800 md:hover:scale-110 duration-150 ease-in">
 								<h1 className="md:text-3xl text-xl text-sky-500 ">{service.title}</h1>
 								<p className="md:text-xl text-md text-black mt-5 ">{service.description}</p>
-							</motion.div>
+							</div>
 						))}
 
 					</div>

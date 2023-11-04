@@ -21,12 +21,22 @@ const HorizontalScrollCarousel = () => {
 		target: targetRef,
 	});
 
-	const x = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
+	const lt768 = useMediaQuery('(max-width: 768px)');
+	const lt1024 = useMediaQuery('(max-width: 1024px)');
+	const lt1280 = useMediaQuery('(max-width: 1280px)');
+	const lt1366 = useMediaQuery('(max-width: 1366px)');
+	let transformValues = ["21%", "-21%"];
+	if (lt1366)
+		transformValues = ["25%", "-25%"];
+	if(lt1280)
+		transformValues = ["30%", "-30%"];
+	if(lt1024)
+		transformValues = ["35%", "-35%"];
+	const x = useTransform(scrollYProgress, [0, 1],transformValues);
 
-	const isMobile = useMediaQuery('(max-width: 768px)');
 
 	//   const x = useTransform(scrollYProgress, [0, 1], transformValues);
-	if (isMobile) {
+	if (lt768) {
 		return (
 			<section >
 				<motion.div className="flex flex-col gap-4 m-10">
@@ -42,7 +52,7 @@ const HorizontalScrollCarousel = () => {
 	else {
 		return (
 			<section ref={targetRef} className="relative h-[200vh]">
-				<div className="sticky top-0 flex h-screen items-center overflow-hidden">
+				<div className="sticky top-0 flex h-screen items-center overflow-hidden ">
 					<motion.div style={{ x }} className="flex gap-4">
 						{cards.map((card) => {
 							return <CardDesktop card={card} key={"testimonial" + card.id} />;
@@ -58,7 +68,7 @@ const CardDesktop = ({ card }) => {
 	return (
 		<div
 			key={"testimonial card" + card.id}
-			className="group relative h-[450px] w-[450px] overflow-hidden bg-black shadow-xl rounded-xl"
+			className="group relative h-[450px] w-[450px] overflow-hidden bg-black shadow-lg rounded-xl shadow-stone-500"
 		>
 			<div className="absolute inset-0 z-10 flex flex-col justify-center items-center">
 				<p className="p-8 text-2xl font-black text-white">
@@ -80,7 +90,7 @@ const CardMobile = ({ card }) => {
 	return (
 		<div
 			key={"testimonial card" + card.id}
-			className=" bg-black shadow-xl rounded-xl p-10 relative"
+			className=" bg-black rounded-xl p-10 relative shadow-md shadow-stone-500"
 		>
 			<div className="flex flex-col justify-center items-center">
 				<p className="text-md text-white">
@@ -89,7 +99,7 @@ const CardMobile = ({ card }) => {
 				<div className="text-white text-md mt-10">
 					<>{" ~" + card.name}</>
 					<div className="mx-auto px-5 py-2">
-						<img src={ratingStars} alt="5_star" className="w-full h-full" />
+						<img src={ratingStars} alt="5_star" className="w-full h-full max-w-[200px]" />
 					</div>
 				</div>
 
