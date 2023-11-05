@@ -61,14 +61,14 @@ const Navbar = () => {
 
 				{/* desktop menu */}
 				<nav className="hidden md:flex items-center gap-x-4 flex-row">
-					<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("home")}>HOME</div>
-					<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("process")} >PROCESS</div>
+					<div className="hover:text-sky-500 ease-in duration-150 cursor-pointer" onClick={() => scrollToElementDesktop("home")}>HOME</div>
+					<div className="hover:text-sky-500 ease-in duration-150 cursor-pointer" onClick={() => scrollToElementDesktop("process")} >PROCESS</div>
 					{/* <div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("what-we-do")} >WHAT WE DO?</div> */}
-					<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("services")} >SERVICES</div>
-					<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("testimonial")} >WHAT PEOPLE ARE SAYING?</div>
-					<a href='https://linkedin-post-generator-eight.vercel.app/' target="_blank" rel="noreferrer" className='relative p-5'>
+					<div className="hover:text-sky-500 ease-in duration-150 cursor-pointer" onClick={() => scrollToElementDesktop("services")} >SERVICES</div>
+					<div className="hover:text-sky-500 ease-in duration-150 cursor-pointer" onClick={() => scrollToElementDesktop("testimonial")} >WHAT PEOPLE ARE SAYING?</div>
+					<a href='https://linkedin-post-generator-eight.vercel.app/' target="_blank" rel="noreferrer" className='relative p-5 hover:text-sky-500 cursor-pointer ease-in duration-150'>
 						MUSE
-						<img src={museBg} alt="muse" className="absolute bottom-0 -right-2" />
+						<img src={museBg} alt="muse" className="absolute bottom-0 -right-2 -z-50" />
 					</a>
 				</nav>
 			</div>
@@ -93,7 +93,7 @@ const Navbar = () => {
 				</nav>
 			)}
 
-			<button className=" bg-blue-500 text-white hover:bg-blue-600 duration-300 ease-in-out rounded-xl md:p-3 my-4 md:text-sm text-xs p-2">
+			<button className=" bg-blue-500 text-white hover:bg-blue-600 md:hover:scale-105 duration-300 ease-in-out rounded-xl md:p-3 my-4 md:text-sm text-xs p-2">
 				<a href='https://calendly.com/joshcons/30min' target="_blank" rel="noreferrer">Schedule Chat</a>
 			</button>
 

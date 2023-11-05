@@ -14,7 +14,7 @@ const Imagination = () => {
 							</div>
 
 							<div className='flex lg:flex-row flex-col-reverse p-5 lg:w-2/3 lg:h-72 w-[70vw] bg-stone-200 hover:bg-stone-100 hover:scale-[103%] ease-in duration-300  rounded-2xl shadow-lg shadow-black mx-2 my-2 items-center'>
-								<div className='flex flex-col justify-center items-center '>
+								<div className='flex flex-col justify-center'>
 									<h2 className='text-2xl font-black text-blue-500 '>Be a thought leader and trusted figure in your industry</h2>
 									<p className='text-lg my-2 text-black'>82% of customers are more likely to convert if the brand's seniors are active on social media.</p>
 								</div>
@@ -24,7 +24,7 @@ const Imagination = () => {
 
 						<div className='flex flex-col lg:flex-row px-5 w-full content-center items-center'>
 
-							<div className='flex lg:flex-row flex-col-reverse p-5 lg:w-2/3 lg:h-72 w-[70vw] bg-stone-200 hover:bg-stone-100 hover:scale-[103%] ease-in duration-300  rounded-2xl shadow-lg shadow-black mx-2 my-2 items-center'>
+							<div className='flex lg:flex-row flex-col-reverse justify-between p-5 lg:w-2/3 lg:h-72 w-[70vw] bg-stone-200 hover:bg-stone-100 hover:scale-[103%] ease-in duration-300  rounded-2xl shadow-lg shadow-black mx-2 my-2 items-center'>
 								<div className='flex flex-col justify-center '>
 									<h2 className='text-2xl font-black text-blue-500 '>Reducing your Customer Acquisition Costs (CAC)</h2>
 									<p className='text-lg my-2 text-black'>To as low as $0. </p>
