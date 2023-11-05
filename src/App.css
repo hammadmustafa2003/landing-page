@@ -1,10 +1,20 @@
 html{
   scroll-behavior: smooth;
+  background: #02022b;
+  color: #ddeaff;
+}
+
+h1{
+  color:white;
+  font-weight:900;
 }
 
 .App{
-  font-family: 'Young Serif', serif;
+  /* font-family: 'Young Serif', serif; */
   /* overflow-x: hidden; */
+
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Young Serif', serif; */
 }
 
 .fade-in-right{

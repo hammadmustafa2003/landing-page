@@ -54,26 +54,24 @@ const Navbar = () => {
 	return (
 		<header className="flex flex-row justify-between md:px-10 px-4 py-2 border-b-[1px] border-stone-200 text-sm z-50">
 
-			<div className="logo">
+			<div className="logo flex gap-x-10">
 				<a className="LOGOLink" href="/">
 					<img src={logo} alt="logo" className=" w-20 h-20" />
 				</a>
+
+				{/* desktop menu */}
+				<nav className="hidden md:flex items-center gap-x-4 flex-row">
+					<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("home")}>HOME</div>
+					<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("process")} >PROCESS</div>
+					{/* <div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("what-we-do")} >WHAT WE DO?</div> */}
+					<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("services")} >SERVICES</div>
+					<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("testimonial")} >WHAT PEOPLE ARE SAYING?</div>
+					<a href='https://linkedin-post-generator-eight.vercel.app/' target="_blank" rel="noreferrer" className='relative p-5'>
+						MUSE
+						<img src={museBg} alt="muse" className="absolute bottom-0 -right-2" />
+					</a>
+				</nav>
 			</div>
-
-
-			{/* desktop menu */}
-			<nav className="hidden md:flex items-center gap-x-4 flex-row">
-				<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("home")}>HOME</div>
-				<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("process")} >PROCESS</div>
-				{/* <div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("what-we-do")} >WHAT WE DO?</div> */}
-				<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("services")} >SERVICES</div>
-				<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("testimonial")} >TESTIMONIALS</div>
-				<a href='https://linkedin-post-generator-eight.vercel.app/' target="_blank" rel="noreferrer" className='relative p-5'>
-					MUSE
-					<img src={museBg} alt="muse" className="absolute bottom-0 -right-2" />
-				</a>
-			</nav>
-
 
 			{/* mobile menu */}
 			{showMenu && (
@@ -87,7 +85,7 @@ const Navbar = () => {
 					<div onClick={() => scrollToElementMobile('process')} >PROCESS</div>
 					{/* <div onClick={() => scrollToElementMobile('what-we-do')} >WHAT WE DO?</div> */}
 					<div onClick={() => scrollToElementMobile('services')} >SERVICES</div>
-					<div onClick={() => scrollToElementMobile('testimonial')} >TESTIMONIAL</div>
+					<div onClick={() => scrollToElementMobile('testimonial')} >WHAT PEOPLE ARE SAYING?</div>
 					<a href='https://linkedin-post-generator-eight.vercel.app/' className='relative p-5'>
 						MUSE
 						<img src={museBg} alt="muse" className="absolute bottom-0 -right-2" />

@@ -68,13 +68,13 @@ const CardDesktop = ({ card }) => {
 	return (
 		<div
 			key={"testimonial card" + card.id}
-			className="group relative h-[450px] w-[450px] overflow-hidden bg-black shadow-lg rounded-xl shadow-stone-500"
+			className="group relative h-[450px] w-[450px] overflow-hidden bg-stone-200 shadow-lg rounded-xl shadow-black"
 		>
 			<div className="absolute inset-0 z-10 flex flex-col justify-center items-center">
-				<p className="p-8 text-2xl font-black text-white">
+				<p className="p-8 text-2xl  text-black">
 					{"\"" + card.quote + "\""}
 				</p>
-				<div className="text-white text-xl">
+				<div className="text-xl font-black text-black">
 					{" ~" + card.name}
 				</div>
 
@@ -90,13 +90,13 @@ const CardMobile = ({ card }) => {
 	return (
 		<div
 			key={"testimonial card" + card.id}
-			className=" bg-black rounded-xl p-10 relative shadow-md shadow-stone-500"
+			className=" bg-stone-200 rounded-xl p-10 relative shadow-md shadow-black"
 		>
 			<div className="flex flex-col justify-center items-center">
-				<p className="text-md text-white">
+				<p className="text-md text-black">
 					{"\"" + card.quote + "\""}
 				</p>
-				<div className="text-white text-md mt-10">
+				<div className="font-black text-black text-md mt-10 text-center">
 					<>{" ~" + card.name}</>
 					<div className="mx-auto px-5 py-2">
 						<img src={ratingStars} alt="5_star" className="w-full h-full max-w-[200px]" />
