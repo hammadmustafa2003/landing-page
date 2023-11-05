@@ -68,7 +68,7 @@ const Navbar = () => {
 				{/* <div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("what-we-do")} >WHAT WE DO?</div> */}
 				<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("services")} >SERVICES</div>
 				<div className="hover:text-sky-500 cursor-pointer" onClick={() => scrollToElementDesktop("testimonial")} >TESTIMONIALS</div>
-				<a href='https://linkedin-post-generator-eight.vercel.app/' className='relative p-5'>
+				<a href='https://linkedin-post-generator-eight.vercel.app/' target="_blank" rel="noreferrer" className='relative p-5'>
 					MUSE
 					<img src={museBg} alt="muse" className="absolute bottom-0 -right-2" />
 				</a>
@@ -96,7 +96,7 @@ const Navbar = () => {
 			)}
 
 			<button className=" bg-blue-500 text-white hover:bg-blue-600 duration-300 ease-in-out rounded-xl md:p-3 my-4 md:text-sm text-xs p-2">
-				<a href='https://calendly.com/joshcons/30min'>Schedule Chat</a>
+				<a href='https://calendly.com/joshcons/30min' target="_blank" rel="noreferrer">Schedule Chat</a>
 			</button>
 
 			<button className="md:hidden" onClick={toggleMenu}>

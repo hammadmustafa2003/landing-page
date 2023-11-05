@@ -81,7 +81,7 @@ function App() {
 						<motion.button className="text-xl text-white bg-blue-500 p-3 rounded-lg w-fit self-center hover:bg-blue-600 duration-300"
 							whileHover={{ scale: 1.1 }}
 						>
-							<a href='https://calendly.com/joshcons/30min'>Schedule Chat</a>
+							<a href='https://calendly.com/joshcons/30min' target="_blank" rel="noreferrer">Schedule Chat</a>
 						</motion.button>
 					</motion.div>
 				</section>
@@ -193,13 +193,13 @@ function App() {
 						<motion.button className="text-xl text-white bg-blue-500 p-3 rounded-lg w-fit self-center hover:bg-blue-600 duration-300 z-10"
 							whileHover={{ scale: 1.1 }}
 						>
-							<a href='https://linkedin-post-generator-eight.vercel.app/' target="_blank">Muse</a>
+							<a href='https://linkedin-post-generator-eight.vercel.app/' target="_blank" rel="noreferrer">Muse</a>
 						</motion.button>
 
 						<motion.button className="text-xl text-white bg-blue-500 p-3 rounded-lg w-fit self-center hover:bg-blue-600 duration-300 z-10"
 							whileHover={{ scale: 1.1 }}
 						>
-							<a href='https://calendly.com/joshcons/30min' target="_blank">Schedule Chat</a>
+							<a href='https://calendly.com/joshcons/30min' target="_blank" rel="noreferrer">Schedule Chat</a>
 						</motion.button>
 
 						<img src={pencil} alt="muse pencil" className='absolute -bottom-20 md:-right-20 -right-10 z-0'/>
